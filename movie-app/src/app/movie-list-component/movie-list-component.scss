@@ -1,0 +1,11 @@
+.rec, .list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  padding: 0 2rem;
+
+  app-movie-card-component {
+    flex: 0 0 auto; 
+  }
+}

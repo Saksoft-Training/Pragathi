@@ -1,0 +1,83 @@
+h3 {
+  text-align: center;
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.poster {
+  display: block;
+  margin: 0 auto 1rem auto;
+  width: 260px;
+  height: 380px;
+  object-fit: contain;   
+  border-radius: 16px;
+  background: #f4f6f7;   
+  padding: 10px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+p {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+  margin: 6px 0;
+  line-height: 1.4;
+}
+
+p span {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+button {
+  display: block;
+  margin: 1.2rem auto 0.5rem auto;
+  padding: 0.6rem 1.4rem;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(135deg, #2980b9, #1f6391);
+    transform: scale(1.08);
+  }
+}
+
+span {
+  display: block;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #f1c40f;
+  margin-top: 0.5rem;
+}
+
+ng-template#noSel p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-top: 2rem;
+  font-style: italic;
+}
+
+.movie-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}

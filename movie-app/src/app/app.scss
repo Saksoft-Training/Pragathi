@@ -1,0 +1,31 @@
+.nav {
+  background-color: blue;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 10px rgba(202, 15, 15, 0.1);
+
+  a {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 1.2rem;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background-color: #1e3c72;
+
+    &:hover {
+      color: #fff;
+      background-color: #ffdd59;
+      border-color: #ffdd59;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      transform: translateY(-2px);
+    }
+  }
+}
+

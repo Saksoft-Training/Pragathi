@@ -1,0 +1,10 @@
+<h2>Welcome to Movie App 🎬</h2>
+<p>Recommended movies</p>
+
+<div class="app">
+  <app-movie-card-component 
+    *ngFor="let m of recommended"
+    [movie]="m"
+    (cardClick)="goToDetails($event)">
+  </app-movie-card-component>
+</div>

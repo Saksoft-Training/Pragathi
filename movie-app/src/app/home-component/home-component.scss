@@ -1,0 +1,24 @@
+h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  font-style: oblique;
+}
+
+p {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #2d1383;
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+}
+
+.app {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;             
+  justify-content: flex-start;
+  padding: 0 2rem 2rem 2rem;
+}
