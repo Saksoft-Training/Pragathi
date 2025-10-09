@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Movie } from '../models/movie';
 import { LoggerService } from '../service/logger';
 import { MovieService } from '../service/movie';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-movie-component',
@@ -22,7 +23,7 @@ export class AddMovieComponent {
     posterUrl: ''
   };
 
-  constructor(private logger: LoggerService, private movieService: MovieService) {}
+  constructor(private router: Router, private logger: LoggerService, private movieService: MovieService) {}
 
   addMovie() {
     if (!this.newMovie.title || !this.newMovie.year) return;
@@ -46,9 +47,16 @@ export class AddMovieComponent {
     this.movieAdded.emit(movie);
     this.logger.log(`Added movie: ${movie.title}`);
     this.resetForm();
+    this.router.navigate(['/movies']);
+
   }
 
   resetForm() {
     this.newMovie = { title: '', year: new Date().getFullYear(), posterUrl: '' };
   }
+
+  
+
+
+  
 }

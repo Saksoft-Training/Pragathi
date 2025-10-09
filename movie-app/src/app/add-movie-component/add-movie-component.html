@@ -4,7 +4,7 @@
   </label>
 
   <label>Year:
-    <input name="year" type="number" [(ngModel)]="newMovie.year" required>
+    <input name="year" type="number" [(ngModel)]="newMovie.year" >
   </label>
 
   <label>Poster URL:
@@ -31,7 +31,7 @@
   </label>
 
   <label>Rating:
-    <input name="rating" type="range" min="0" max="10" [(ngModel)]="newMovie.rating">
+    <input name="rating" [title]="newMovie.rating" type="range" min="0" max="10" [(ngModel)]="newMovie.rating">
   </label>
 
   <label>Language:
@@ -45,7 +45,7 @@
   </label>
 
   <label>Duration (min):
-    <input name="duration" type="number" [(ngModel)]="newMovie.duration">
+    <input name="duration" type="time" [(ngModel)]="newMovie.duration">
   </label>
 
   <label>Release Date:

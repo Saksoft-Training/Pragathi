@@ -5,6 +5,7 @@ import { MovieDetailComponent } from './movie-detail-component/movie-detail-comp
 import { AboutComponent } from './about-component/about-component';
 import { AddMovieComponent } from './add-movie-component/add-movie-component';
 import { PageNotFound } from './page-not-found/page-not-found';
+import { DemoHttp } from './demo-http/demo-http';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -12,5 +13,7 @@ export const routes: Routes = [
   { path: 'movies/:id', component: MovieDetailComponent },
   { path: 'about', component: AboutComponent },
   { path: 'add-movie', component: AddMovieComponent },
+  { path: 'demo-http', component: DemoHttp },
+
   { path: '**', component: PageNotFound }
 ];

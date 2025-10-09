@@ -31,6 +31,8 @@ export class MovieListComponent {
     this.router.navigate(['/movies', id]);
   }
 
+  
+
   onDeleteMovie(id: number) {
     this.movies = this.movies.filter(m => m.id !== id);
     this.logger.log(`Movie with ID ${id} deleted`);
