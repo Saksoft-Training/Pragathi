@@ -1,0 +1,15 @@
+<h2>All Movies</h2>
+
+<div *ngIf="movies.length === 0">
+  <p>No movies available</p>
+</div>
+
+<div class="list" *ngIf="movies.length > 0">
+  <app-movie-card-component
+    *ngFor="let m of movies"
+    [movie]="m"
+    [showDeleteButton]="true"
+    (cardClick)="onCardClick($event)"
+    (deleteMovie)="onDeleteMovie($event)">
+  </app-movie-card-component>
+</div>

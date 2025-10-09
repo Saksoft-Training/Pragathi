@@ -1,0 +1,21 @@
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f5f6fa;
+  text-align: center;
+
+  h1 {
+    font-size: 4rem;
+    color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+}

@@ -1,0 +1,18 @@
+<div *ngIf="current; else noSel">
+  <h3>{{ current.title }} ({{ current.year }})</h3>
+  <img [src]="current.posterUrl" [alt]="current.title" class="poster">
+  <p *ngIf="current.description">Description: {{ current.description }}</p>
+  <p *ngIf="current.director">Director: {{ current.director }}</p>
+  <p *ngIf="current.genre">Genre: {{ current.genre }}</p>
+  <p *ngIf="current.rating">Rating: {{ current.rating }}/10</p>
+  <p *ngIf="current.language">Language: {{ current.language }}</p>
+  <p *ngIf="current.duration">Duration: {{ current.duration }} min</p>
+  <p *ngIf="current.releaseDate">Release: {{ current.releaseDate }}</p>
+
+  <button (click)="toggleFavorite()">Mark as Favorite</button>
+  <span *ngIf="current.favorite">Favorite</span>
+</div>
+
+<ng-template #noSel>
+  <p>No movie selected</p>
+</ng-template>

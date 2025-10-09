@@ -1,0 +1,19 @@
+<div class="card" appHighlightMovie (click)="onCardClick()"
+     [ngClass]="{'new-release': movie.year > 2020}"
+     [ngStyle]="movie.year > 2021 ? {'border': '2px solid green'} : {}">
+  <img [src]="movie.posterUrl" [alt]="movie.title" class="poster">
+  <div class="info">
+    <h3>{{ movie.title }} ({{ movie.year }})</h3>
+    <p *ngIf="movie.director">Director: {{ movie.director }}</p>
+    <p *ngIf="movie.description">Description: {{ movie.description }}</p>
+    <p *ngIf="movie.genre">Genre: {{ movie.genre }}</p>
+    <p *ngIf="movie.rating">Rating: {{ movie.rating }}/10</p>
+    <p *ngIf="movie.language">Language: {{ movie.language }}</p>
+    <p *ngIf="movie.duration">Duration: {{ movie.duration }} min</p>
+    <p *ngIf="movie.releaseDate">Release: {{ movie.releaseDate }}</p>
+
+    <div class="buttons">
+      <button *ngIf="showDeleteButton" (click)="onDeleteMovie(); $event.stopPropagation()">Delete</button>
+    </div>
+  </div>
+</div>
