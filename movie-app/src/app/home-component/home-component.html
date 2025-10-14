@@ -2,9 +2,11 @@
 <p>Recommended movies</p>
 
 <div class="app">
-  <app-movie-card-component 
-    *ngFor="let m of recommended"
-    [movie]="m"
-    (cardClick)="goToDetails($event)">
-  </app-movie-card-component>
+  @for (m of recommended; track m.id) 
+  {
+    <app-movie-card-component 
+      [movie]="m"
+      (cardClick)="goToDetails($event)">
+    </app-movie-card-component>
+  }
 </div>

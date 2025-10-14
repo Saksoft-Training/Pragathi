@@ -1,7 +1,14 @@
+$heading-color: #2c3e50;
+$text-color: #555;
+$highlight-color: #f1c40f;
+$poster-bg: #f4f6f7;
+$button-radius: 10px;
+$box-shadow: rgba(0, 0, 0, 0.15);
+
 h3 {
   text-align: center;
   font-size: 2rem;
-  color: #2c3e50;
+  color: $heading-color;
   margin-bottom: 1rem;
   font-weight: 600;
 }
@@ -11,11 +18,11 @@ h3 {
   margin: 0 auto 1rem auto;
   width: 260px;
   height: 380px;
-  object-fit: contain;   
+  object-fit: contain;
   border-radius: 16px;
-  background: #f4f6f7;   
+  background: $poster-bg;
   padding: 10px;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 18px $box-shadow;
   transition: transform 0.3s ease;
 
   &:hover {
@@ -26,14 +33,14 @@ h3 {
 p {
   text-align: center;
   font-size: 1rem;
-  color: #555;
+  color: $text-color;
   margin: 6px 0;
   line-height: 1.4;
 }
 
 p span {
   font-weight: 600;
-  color: #2c3e50;
+  color: $heading-color;
 }
 
 button {
@@ -43,11 +50,10 @@ button {
   background: linear-gradient(135deg, #3498db, #2980b9);
   color: #fff;
   border: none;
-  border-radius: 10px;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px $box-shadow;
   transition: all 0.3s ease;
 
   &:hover {
@@ -60,24 +66,6 @@ span {
   display: block;
   text-align: center;
   font-size: 1.2rem;
-  color: #f1c40f;
+  color: $highlight-color;
   margin-top: 0.5rem;
-}
-
-ng-template#noSel p {
-  text-align: center;
-  font-size: 1.1rem;
-  color: #7f8c8d;
-  margin-top: 2rem;
-  font-style: italic;
-}
-
-.movie-container {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  text-align: center;
 }

@@ -1,14 +1,20 @@
+$nav-bg: blue;
+$link-bg: #1e3c72;
+$link-hover-bg: #ffdd59;
+$link-text-color: #fff;
+$border-radius: 8px;
+
 .nav {
-  background-color: blue;
+  background-color: $nav-bg;
   padding: 1rem 2rem;
   display: flex;
   justify-content: center;
   gap: 2rem;
-  border-radius: 8px;
+  border-radius: $border-radius;
   box-shadow: 0 10px 10px rgba(202, 15, 15, 0.1);
 
   a {
-    color: #fff;
+    color: $link-text-color;
     font-weight: 600;
     text-decoration: none;
     font-size: 1.1rem;
@@ -17,15 +23,32 @@
     border-radius: 6px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    background-color: #1e3c72;
+    background-color: $link-bg;
 
     &:hover {
-      color: #fff;
-      background-color: #ffdd59;
-      border-color: #ffdd59;
+      color: $link-text-color;
+      background-color: $link-hover-bg;
+      border-color: $link-hover-bg;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
       transform: translateY(-2px);
     }
   }
 }
 
+
+.highlight-movie {
+  box-shadow: 0 8px 20px rgba(141, 7, 112, 0.8);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+button
+{
+      border-radius: $border-radius;
+      border: none;
+
+}
+
+form{
+  font-family: 'Arial', sans-serif;
+}

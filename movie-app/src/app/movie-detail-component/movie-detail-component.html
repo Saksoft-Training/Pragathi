@@ -1,18 +1,40 @@
-<div *ngIf="current; else noSel">
-  <h3>{{ current.title }} ({{ current.year }})</h3>
-  <img [src]="current.posterUrl" [alt]="current.title" class="poster">
-  <p *ngIf="current.description">Description: {{ current.description }}</p>
-  <p *ngIf="current.director">Director: {{ current.director }}</p>
-  <p *ngIf="current.genre">Genre: {{ current.genre }}</p>
-  <p *ngIf="current.rating">Rating: {{ current.rating }}/10</p>
-  <p *ngIf="current.language">Language: {{ current.language }}</p>
-  <p *ngIf="current.duration">Duration: {{ current.duration }} min</p>
-  <p *ngIf="current.releaseDate">Release: {{ current.releaseDate }}</p>
+@if (current; as movie) {
+  <h3>{{ movie.title }} ({{ movie.year }})</h3>
+  <img [src]="movie.posterUrl" [alt]="movie.title" class="poster">
+
+  @if (movie.description) {
+    <div><p>Description: {{ movie.description }}</p></div>
+  }
+
+  @if (movie.director) {
+    <div><p>Director: {{ movie.director }}</p></div>
+  }
+
+  @if (movie.genre) {
+    <div><p>Genre: {{ movie.genre }}</p></div>
+  }
+
+  @if (movie.rating) {
+    <div><p>Rating: {{ movie.rating }}/10</p></div>
+  }
+
+  @if (movie.language) {
+    <div><p>Language: {{ movie.language }}</p></div>
+  }
+
+  @if (movie.duration) {
+    <div><p>Duration: {{ movie.duration }} min</p></div>
+  }
+
+  @if (movie.releaseDate) {
+    <div><p>Release: {{ movie.releaseDate }}</p></div>
+  }
 
   <button (click)="toggleFavorite()">Mark as Favorite</button>
-  <span *ngIf="current.favorite">Favorite</span>
-</div>
 
-<ng-template #noSel>
+  @if (movie.favorite) {
+    <span>Favorite</span>
+  }
+} @else {
   <p>No movie selected</p>
-</ng-template>
+}
