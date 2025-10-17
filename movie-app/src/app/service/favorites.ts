@@ -23,7 +23,6 @@ export class FavoritesService {
   //#endregion
 
   //#region Methods
-
   /**
    * Checks if a movie is marked as favorite.
    * @summary Returns true if the movie ID exists in the favorites set; otherwise, returns false.
@@ -31,7 +30,6 @@ export class FavoritesService {
    * @param id - The ID of the movie to check.
    * @returns True if the movie is a favorite; otherwise, false.
    */
-
   public isFavorite(id: number): boolean {
     return this.favorites.has(id);
   }

@@ -7,22 +7,19 @@ import { LoggerService } from '../service/logger';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './about-component.html',
-  styleUrls: ['./about-component.scss'],
+  // styleUrls: ['./about-component.scss'],
   providers: [LoggerService]
 })
-
-
 export class AboutComponent {
   //#region constructor
   /**
    * Initializes the About component.
-   * @summary logs message indicating that the about page was visited.
+   * @summary Logs message indicating that the about page was visited.
    * @access public
-   * @param logger-Instance of loggerService used to log message.
+   * @param logger - Instance of LoggerService used to log message.
    */
-
   public constructor(private logger: LoggerService) {
     this.logger.log('Visited About page');
   }
+  //#endregion constructor
 }
-//#endregion constructor

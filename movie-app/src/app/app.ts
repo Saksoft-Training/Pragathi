@@ -7,9 +7,8 @@ import { provideHttpClient } from '@angular/common/http';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterModule],
- 
   templateUrl: './app.html',
-  styleUrls: ['./app.scss']
+  // styleUrls: ['./app.scss']
 })
 export class AppComponent {
   title = 'movie-app';

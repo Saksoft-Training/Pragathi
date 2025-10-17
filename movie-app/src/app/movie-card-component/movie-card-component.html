@@ -1,41 +1,35 @@
-<div class="card" appHighlightMovie (click)="onCardClick()"
-     [ngClass]="{'new-release': movie.year > 2020}"
-     [ngStyle]="movie.year > 2021 ? {'border': '2px solid green'} : {}">
-  <img [src]="movie.posterUrl" [alt]="movie.title" class="poster">
-  <div class="info">
-    <h3>{{ movie.title }} ({{ movie.year }})</h3>
-    @if (movie.director) {
-      <p>Director: {{ movie.director }}</p>
-    }
-
-    @if (movie.description) {
-      <p>Description: {{ movie.description }}</p>
-    }
-
-    @if (movie.genre) {
-      <p>Genre: {{ movie.genre }}</p>
-    }
-
-    @if (movie.rating) {
-      <p>Rating: {{ movie.rating }}/10</p>
-    }
-
-    @if (movie.language) {
-      <p>Language: {{ movie.language }}</p>
-    }
-
-    @if (movie.duration) {
-      <p>Duration: {{ movie.duration }} min</p>
-    }
-
-    @if (movie.releaseDate) {
-      <p>Release: {{ movie.releaseDate }}</p>
-    }
-
-    <div class="buttons">
-      @if (showDeleteButton) {
-        <button (click)="onDeleteMovie(); $event.stopPropagation()">Delete</button>
-      }
+<div class="card movie-card" appHighlightMovie (click)="onCardClick()" [class.new-release]="movie.year > 2020"
+  [style.border]="movie.year > 2021 ? '2px solid green' : 'none'">
+  <img [src]="movie.posterUrl" [alt]="movie.title" class="poster movie-poster">
+  <div class="info movie-info">
+    <h3 class="movie-title">{{ movie.title }} ({{ movie.year }})</h3>
+    <div class="movie-fields">
+      <p class="movie-field movie-director">
+        {{ movie.director ? 'Director: ' + movie.director : '' }}
+      </p>
+      <p class="movie-field movie-description">
+        {{ movie.description ? 'Description: ' + movie.description : '' }}
+      </p>
+      <p class="movie-field movie-genre">
+        {{ movie.genre ? 'Genre: ' + movie.genre : '' }}
+      </p>
+      <p class="movie-field movie-rating">
+        {{ movie.rating ? 'Rating: ' + movie.rating + '/10' : '' }}
+      </p>
+      <p class="movie-field movie-language">
+        {{ movie.language ? 'Language: ' + movie.language : '' }}
+      </p>
+      <p class="movie-field movie-duration">
+        {{ movie.duration ? 'Duration: ' + movie.duration + ' min' : '' }}
+      </p>
+      <p class="movie-field movie-release-date">
+        {{ movie.releaseDate ? 'Release: ' + movie.releaseDate : '' }}
+      </p>
+    </div>
+    <div class="movie-buttons">
+      <button class="btn-delete" (click)="onDeleteMovie(); $event.stopPropagation()">
+        {{ showDeleteButton ? 'Delete' : '' }}
+      </button>
     </div>
   </div>
 </div>

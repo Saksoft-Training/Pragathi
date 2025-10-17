@@ -1,40 +1,36 @@
-@if (current; as movie) {
-  <h3>{{ movie.title }} ({{ movie.year }})</h3>
-  <img [src]="movie.posterUrl" [alt]="movie.title" class="poster">
-
-  @if (movie.description) {
-    <div><p>Description: {{ movie.description }}</p></div>
-  }
-
-  @if (movie.director) {
-    <div><p>Director: {{ movie.director }}</p></div>
-  }
-
-  @if (movie.genre) {
-    <div><p>Genre: {{ movie.genre }}</p></div>
-  }
-
-  @if (movie.rating) {
-    <div><p>Rating: {{ movie.rating }}/10</p></div>
-  }
-
-  @if (movie.language) {
-    <div><p>Language: {{ movie.language }}</p></div>
-  }
-
-  @if (movie.duration) {
-    <div><p>Duration: {{ movie.duration }} min</p></div>
-  }
-
-  @if (movie.releaseDate) {
-    <div><p>Release: {{ movie.releaseDate }}</p></div>
-  }
-
-  <button (click)="toggleFavorite()">Mark as Favorite</button>
-
-  @if (movie.favorite) {
-    <span>Favorite</span>
-  }
-} @else {
-  <p>No movie selected</p>
-}
+<div class="movie-details">
+  <h3 class="movie-title">{{ current?.title || '' }} ({{ current?.year || '' }})</h3>
+  <img [src]="current?.posterUrl || ''" [alt]="current?.title || ''" class="poster movie-poster">
+  <div class="movie-fields">
+    <p class="movie-description">
+      {{ current?.description ? 'Description: ' + current?.description : '' }}
+    </p>
+    <p class="movie-director">
+      {{ current?.director ? 'Director: ' + current?.director : '' }}
+    </p>
+    <p class="movie-genre">
+      {{ current?.genre ? 'Genre: ' + current?.genre : '' }}
+    </p>
+    <p class="movie-rating">
+      {{ current?.rating ? 'Rating: ' + current?.rating + '/10' : '' }}
+    </p>
+    <p class="movie-language">
+      {{ current?.language ? 'Language: ' + current?.language : '' }}
+    </p>
+    <p class="movie-duration">
+      {{ current?.duration ? 'Duration: ' + current?.duration + ' min' : '' }}
+    </p>
+    <p class="movie-release-date">
+      {{ current?.releaseDate ? 'Release: ' + current?.releaseDate : '' }}
+    </p>
+  </div>
+  <div class="favorite-container">
+    <button class="btn-favorite" (click)="toggleFavorite()">Mark as Favorite</button>
+    <span class="favorite-badge">
+      {{ current?.favorite ? 'Favorite' : '' }}
+    </span>
+  </div>
+</div>
+<p class="no-movie">
+  {{ !current ? 'No movie selected' : '' }}
+</p>

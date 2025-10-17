@@ -11,5 +11,4 @@ export interface Movie {
   releaseDate?: string;
   title: string;
   year: number;
-
 }

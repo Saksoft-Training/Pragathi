@@ -1,26 +1,21 @@
-<form (ngSubmit)="addMovie()">
-  <label>Title:
-    <input name="title" [(ngModel)]="newMovie.title" required>
+<form (ngSubmit)="addMovie()" class="movie-form">
+  <label  class="form-label">Title:
+    <input name="title" [(ngModel)]="newMovie.title" required class="form-input">
   </label>
-
-  <label>Year:
-    <input name="year" type="number" [(ngModel)]="newMovie.year" >
+  <label class="form-label">Year:
+    <input name="year" type="number" [(ngModel)]="newMovie.year" class="form-input">
   </label>
-
-  <label>Poster URL:
-    <input name="posterUrl" [(ngModel)]="newMovie.posterUrl">
+  <label class="form-label">Poster URL:
+    <input name="posterUrl" [(ngModel)]="newMovie.posterUrl" class="form-input">
   </label>
-
-  <label>Director:
-    <input name="director" [(ngModel)]="newMovie.director">
+  <label class="form-label">Director:
+    <input name="director" [(ngModel)]="newMovie.director" class="form-input">
   </label>
-
-  <label>Description:
-    <textarea name="description" [(ngModel)]="newMovie.description"></textarea>
+  <label class="form-label">Description:
+    <textarea name="description" [(ngModel)]="newMovie.description" class="form-textarea"></textarea>
   </label>
-
-  <label>Genre:
-    <select name="genre" [(ngModel)]="newMovie.genre">
+  <label class="form-label">Genre:
+    <select name="genre" [(ngModel)]="newMovie.genre" class="form-select">
       <option value="" disabled selected>Select genre</option>
       <option value="Action">Action</option>
       <option value="Comedy">Comedy</option>
@@ -29,13 +24,11 @@
       <option value="Sci-Fi">Sci-Fi</option>
     </select>
   </label>
-
-  <label>Rating:
-    <input name="rating" [title]="newMovie.rating" type="range" min="0" max="10" [(ngModel)]="newMovie.rating">
+  <label class="form-label">Rating:
+    <input name="rating" [title]="newMovie.rating" type="range" min="0" max="10" [(ngModel)]="newMovie.rating" class="form-range">
   </label>
-
-  <label>Language:
-    <select name="language" [(ngModel)]="newMovie.language">
+  <label class="form-label">Language:
+    <select name="language" [(ngModel)]="newMovie.language" class="form-select">
       <option value="" disabled selected>Select language</option>
       <option value="English">English</option>
       <option value="Hindi">Hindi</option>
@@ -43,15 +36,12 @@
       <option value="French">French</option>
     </select>
   </label>
-
-  <label>Duration (min):
-    <input name="duration" type="time" [(ngModel)]="newMovie.duration">
+  <label class="form-label">Duration (min):
+    <input name="duration" type="time" [(ngModel)]="newMovie.duration" class="form-input">
   </label>
-
-  <label>Release Date:
-    <input name="releaseDate" type="date" [(ngModel)]="newMovie.releaseDate">
+  <label class="form-label">Release Date:
+    <input name="releaseDate" type="date" [(ngModel)]="newMovie.releaseDate" class="form-input">
   </label>
-
-  <button type="submit" class="primary">Add Movie</button>
-  <button type="button" class="secondary" (click)="resetForm()">Reset</button>
+  <button type="submit" class="form-button primary">Add Movie</button>
+  <button type="button" class="form-button secondary" (click)="resetForm()">Reset</button>
 </form>

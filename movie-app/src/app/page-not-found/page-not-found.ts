@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   selector: 'app-page-not-found',
   imports: [CommonModule],
   templateUrl: './page-not-found.html',
-  styleUrl: './page-not-found.scss'
+  // styleUrl: './page-not-found.scss'
 })
 export class PageNotFound {
 

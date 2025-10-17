@@ -1,90 +1,79 @@
 import { Injectable } from '@angular/core';
 import { Movie } from '../models/movie';
+import { HttpClient } from '@angular/common/http';
+import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
   //#region Properties
-  private movies: Movie[] = [
-
-    {
-      id: 1,
-      title: 'OG',
-      year: 2018,
-      posterUrl: 'assets/og.avif',
-      director: 'Prashanth Neel',
-      description: 'A young man rises in the Kolar Gold Fields.',
-      favorite: false
-    },
-    {
-      id: 2,
-      title: 'Kantara',
-      year: 2022,
-      posterUrl: 'assets/kantara.avif',
-      director: 'Rishab Shetty',
-      description: 'A story of tradition, forest, and valor.',
-      favorite: false
-    },
-    {
-      id: 3,
-      title: 'Lokah',
-      year: 2014,
-      posterUrl: 'assets/lokah.avif',
-      director: 'Prashanth Neel',
-      description: 'A former gangster returns to protect his town.',
-      favorite: false
-    },
-    {
-      id: 4,
-      title: 'Idli Kadai',
-      year: 2023,
-      posterUrl: 'assets/idli.avif',
-      director: 'Ramesh',
-      description: 'A heartwarming tale of friendship and street food.',
-      favorite: false
-    },
-
-  ];
+  /**
+   * @summary Stores movies in memory after loading from JSON.
+   * @access private
+   * @returns Array of Movie objects
+   */
+  private movies: Movie[] = [];
+  /**
+   * @summary Path to the local JSON file containing movies.
+   * @access private
+   */
+  private movieJsonPath = 'assets/movie.json';
   //#endregion
 
-  //#region Methods
-
+  //#region Constructor
   /**
-   * @summary Provides all movies available in service.
+   * @summary Initializes the MovieService.
    * @access public
-   * @returns Movie[] - Array of movie objects.
+   * @param http - HttpClient to fetch movie data from JSON
    */
+  public constructor(private http: HttpClient) { }
+  //#endregion
 
+  //#region Public Methods
+  /**
+   * @summary Loads movies from the JSON file if not already loaded.
+   * Stores the movies in memory for future use.
+   * @access public
+   * @returns Observable<Movie[]> - Emits the loaded movies
+   */
+  public loadMovies(): Observable<Movie[]> {
+    if (this.movies.length) {
+      return new Observable<Movie[]>(observer => {
+        observer.next(this.movies);
+        observer.complete();
+      });
+    }
+    return this.http.get<Movie[]>(this.movieJsonPath).pipe(
+      tap(movies => this.movies = movies)
+    );
+  }
+  /**
+   * @summary Returns the list of movies stored in memory.
+   * @access public
+   * @returns Movie[] - Copy of movies array
+   */
   public getMovies(): Movie[] {
     return [...this.movies];
   }
-  //#endregion
-
-  //#region Methods
-
   /**
-   * @summary Finds and returns single movie matching the given id.
+   * @summary Adds a new movie to the in-memory movie list.
    * @access public
-   * @param id - The ID of the movie to find.
-   * @returns The movie object if found, otherwise, undefined.
+   * @param movie - The Movie object to add
+   * @returns void
    */
-  getMovieById(id: number): Movie | undefined {
+  public addMovie(movie: Movie): void {
+    this.movies.push(movie);
+  }
+  /**
+   * @summary Retrieves a movie by its ID.
+   * @access public
+   * @param id - The ID of the movie to retrieve
+   * @returns Movie | undefined - The movie if found, otherwise undefined
+   */
+  public getMovieById(id: number): Movie | undefined {
     return this.movies.find(m => m.id === id);
   }
   //#endregion
-
-  //#region Methods
-
-  /**
-   * @summary Push the provided movie object to movies list.
-   * @access public
-   * @param movie - The movie object to add.
-   * @returns void
-   */
-
-  public addMovie(movie: Movie) {
-    this.movies.push(movie);
-  }
-  //#endregion
 }
+

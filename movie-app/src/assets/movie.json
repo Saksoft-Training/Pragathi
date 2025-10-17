@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "OG",
+    "year": 2018,
+    "posterUrl": "assets/og.avif",
+    "director": "Prashanth Neel",
+    "description": "A young man rises in the Kolar Gold Fields.",
+    "favorite": false
+  },
+  {
+    "id": 2,
+    "title": "Kantara",
+    "year": 2022,
+    "posterUrl": "assets/kantara.avif",
+    "director": "Rishab Shetty",
+    "description": "A story of tradition, forest, and valor.",
+    "favorite": false
+  },
+  {
+    "id": 3,
+    "title": "Lokah",
+    "year": 2014,
+    "posterUrl": "assets/lokah.avif",
+    "director": "Prashanth Neel",
+    "description": "A former gangster returns to protect his town.",
+    "favorite": false
+  },
+  {
+    "id": 4,
+    "title": "Idli Kadai",
+    "year": 2023,
+    "posterUrl": "assets/idli.avif",
+    "director": "Ramesh",
+    "description": "A heartwarming tale of friendship and street food.",
+    "favorite": false
+  }
+]

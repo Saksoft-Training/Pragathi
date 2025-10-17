@@ -9,7 +9,7 @@ import { HighlightMovieDirective } from '../directives/highlight-movie';
   standalone: true,
   imports: [CommonModule, HighlightMovieDirective],
   templateUrl: './movie-card-component.html',
-  styleUrls: ['./movie-card-component.scss'],
+  // styleUrls: ['./movie-card-component.scss'],
   providers: [LoggerService]
 })
 export class MovieCardComponent {
@@ -20,7 +20,6 @@ export class MovieCardComponent {
   @Output() cardClick = new EventEmitter<number>(); // emit card click for navigation
   //#endregion  
 
-
   //#region Constructor
   /**
    * Initializes the MovieCard component.
@@ -28,7 +27,6 @@ export class MovieCardComponent {
    * @access public
    * @param logger-Service for logging actions.
    */
-
   public constructor(private logger: LoggerService) { }
   //#endregion
 
@@ -39,24 +37,20 @@ export class MovieCardComponent {
    * @access public
    * @returns void
    */
-
-  onCardClick(): void {
+  public onCardClick(): void {
     this.logger.log(`${this.movie.title} card clicked`);
     this.cardClick.emit(this.movie.id); // navigate on parent side
   }
-  //#endregion
-
-  //#region Event Handlers
   /**
    * Handles the deletion of the movie.
    * @summary Logs the deletion and emits the deleteMovie event with movie ID.
    * @access public
    * @returns void  
    */
-
   public onDeleteMovie(): void {
     this.logger.log(`Deleting movie ${this.movie.title}`);
     this.deleteMovie.emit(this.movie.id);
   }
   //#endregion
 }
+

@@ -11,7 +11,7 @@ import { LoggerService } from '../service/logger';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './movie-detail-component.html',
-  styleUrls: ['./movie-detail-component.scss'],
+  // styleUrls: ['./movie-detail-component.scss'],
   providers: [LoggerService]
 })
 export class MovieDetailComponent implements OnInit {
@@ -45,7 +45,6 @@ export class MovieDetailComponent implements OnInit {
    * @access public
    * @returns void
    */
-
   public ngOnInit(): void {
     this.route.paramMap.subscribe(pm => {
       const id = pm.get('id');
@@ -61,12 +60,11 @@ export class MovieDetailComponent implements OnInit {
    * @access public
    * @returns Movie | undefined
    */
-
   public get current(): Movie | undefined {
     return this.movie ?? this.localMovie;
   }
   //#endregion
-
+  
   //#region Event Handlers
   /**
    * Toggles the favorite status of the current movie
@@ -74,7 +72,6 @@ export class MovieDetailComponent implements OnInit {
    * @access public
    * @returns void
    */
-
   public toggleFavorite(): void {
     const selectedMovie = this.current;
     if (!selectedMovie) return;
@@ -84,3 +81,5 @@ export class MovieDetailComponent implements OnInit {
   }
   //#endregion
 }
+ 
+ 
