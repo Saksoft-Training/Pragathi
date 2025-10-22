@@ -1,0 +1,11 @@
+<h2 class="app-title">Welcome to Movie App 🎬</h2>
+<p class="app-subtitle">Recommended movies</p>
+<div class="app">
+  @for (m of recommended; track m.id) 
+  {
+    <app-movie-card-component 
+      [movie]="m"
+      (cardClick)="goToDetails($event)">
+    </app-movie-card-component>
+  }
+</div>

@@ -1,0 +1,35 @@
+<div class="card movie-card" appHighlightMovie (click)="onCardClick()" [class.new-release]="movie.year > 2020"
+  [style.border]="movie.year > 2021 ? '2px solid green' : 'none'">
+  <img [src]="movie.posterUrl" [alt]="movie.title" class="poster movie-poster">
+  <div class="info movie-info">
+    <h3 class="movie-title">{{ movie.title }} ({{ movie.year }})</h3>
+    <div class="movie-fields">
+      <p class="movie-field movie-director">
+        {{ movie.director ? 'Director: ' + movie.director : '' }}
+      </p>
+      <p class="movie-field movie-description">
+        {{ movie.description ? 'Description: ' + movie.description : '' }}
+      </p>
+      <p class="movie-field movie-genre">
+        {{ movie.genre ? 'Genre: ' + movie.genre : '' }}
+      </p>
+      <p class="movie-field movie-rating">
+        {{ movie.rating ? 'Rating: ' + movie.rating + '/10' : '' }}
+      </p>
+      <p class="movie-field movie-language">
+        {{ movie.language ? 'Language: ' + movie.language : '' }}
+      </p>
+      <p class="movie-field movie-duration">
+        {{ movie.duration ? 'Duration: ' + movie.duration + ' min' : '' }}
+      </p>
+      <p class="movie-field movie-release-date">
+        {{ movie.releaseDate ? 'Release: ' + movie.releaseDate : '' }}
+      </p>
+    </div>
+    <div class="movie-buttons">
+      <button class="btn-delete" (click)="onDeleteMovie(); $event.stopPropagation()">
+        {{ showDeleteButton ? 'Delete' : '' }}
+      </button>
+    </div>
+  </div>
+</div>

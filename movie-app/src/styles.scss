@@ -1,0 +1,494 @@
+$nav-bg: blue;
+$link-bg: #1e3c72;
+$link-hover-bg: #ffdd59;
+$link-text-color: #fff;
+$border-radius: 8px;
+
+.nav {
+    background-color: $nav-bg;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    border-radius: $border-radius;
+    box-shadow: 0 10px 10px rgba(202, 15, 15, 0.1);
+
+    .nav-link {
+        color: $link-text-color;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 1.1rem;
+        padding: 0.5rem 1.2rem;
+        border: 2px solid transparent;
+        border-radius: 6px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        background-color: $link-bg;
+
+        &:hover {
+            color: $link-text-color;
+            background-color: $link-hover-bg;
+            border-color: $link-hover-bg;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+    }
+}
+
+.highlight-movie {
+    box-shadow: 0 8px 20px rgba(141, 7, 112, 0.8);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.form-button {
+    border-radius: $border-radius;
+    border: none;
+
+}
+
+.movie-form {
+    font-family: 'Arial', sans-serif;
+}
+
+/**about**/
+$primary-gradient: linear-gradient(rgba(220, 20, 60, 0.9), rgba(138, 43, 226, 0.8));
+$text-color: #fff;
+$background-dark: #111;
+$shadow-color: rgba(0, 0, 0, 0.3);
+$border-radius: 16px;
+
+.about-container {
+    text-align: center;
+    padding: 40px;
+    background: $background-dark;
+    color: $text-color;
+
+    .about-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+}
+
+.about-card {
+    background: $primary-gradient;
+    padding: 40px;
+    border-radius: $border-radius;
+    max-width: 1000px;
+    margin: auto;
+    color: $text-color;
+    box-shadow: 0 8px 24px $shadow-color;
+
+    .about {
+        margin-bottom: 30px;
+
+        .about-subtitle {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        .about-heading {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .text {
+            font-size: 1rem;
+            margin-top: 15px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .box1 {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin: 30px 0;
+
+        .box2 {
+            text-align: center;
+
+            .about-title {
+                font-size: 1.8rem;
+                margin-bottom: 8px;
+                font-weight: bold;
+            }
+
+            .about-subtext {
+                font-size: 1rem;
+                opacity: 0.9;
+            }
+        }
+    }
+
+}
+
+/**addmovie**/
+$form-bg: #dfeaaa;
+$label-color: #333;
+$input-border: #ccc;
+$button-primary-bg: #007bff;
+$button-primary-hover: #00b30c;
+$button-secondary-bg: #cfc535;
+$button-secondary-hover: #5a6268;
+$border-radius: 8px;
+$border-radius-form: 15px;
+
+.movie-form {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: $form-bg;
+    border-radius: $border-radius-form;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .form-label {
+        display: flex;
+        flex-direction: column;
+        font-weight: 700;
+        color: $label-color;
+        font-size: larger;
+
+        .form-input,
+        .form-textarea,
+        .form-select {
+            margin-top: 0.5rem;
+            padding: 0.6rem 1rem;
+            border: 1px solid $input-border;
+            border-radius: $border-radius;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+
+            &:focus {
+                border-color: #007bff;
+                box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+                outline: none;
+            }
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-select {
+            cursor: pointer;
+            background-color: #fff;
+        }
+
+        .form-range[type="range"] {
+            accent-color: #7db811;
+            outline: none;
+        }
+    }
+
+    .form-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+        border-radius: $border-radius;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: #fff;
+
+        &.primary {
+            background-color: $button-primary-bg;
+
+            &:hover {
+                background-color: $button-primary-hover;
+            }
+        }
+
+        &.secondary {
+            background-color: $button-secondary-bg;
+
+            &:hover {
+                background-color: $button-secondary-hover;
+            }
+        }
+    }
+}
+
+/**home**/
+$heading-color: #2c3e50;
+$paragraph-color: #2d1383;
+$padding-left: 2rem;
+$gap-size: 1rem;
+
+.app-title {
+    text-align: center;
+    font-size: 1.8rem;
+    color: $heading-color;
+    margin-bottom: 1rem;
+    padding-left: $padding-left;
+    font-style: oblique;
+}
+
+.app-subtitle {
+    text-align: center;
+    font-size: 1.5rem;
+    color: $paragraph-color;
+    margin-bottom: 2rem;
+    padding-left: $padding-left;
+}
+
+.app {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gap-size;
+    justify-content: flex-start;
+    padding: 0 $padding-left 2rem $padding-left;
+}
+
+/**movie card**/
+$card-bg: #fff;
+$card-radius: 12px;
+$card-shadow: rgba(0, 0, 0, 0.1);
+$hover-shadow: rgba(0, 0, 0, 0.2);
+$text-color: #2c3e50;
+$primary-color: #3498db;
+$primary-hover: #2980b9;
+$button-color: #e74c3c;
+$button-hover: #c0392b;
+
+.card.movie-card {
+    display: flex;
+    flex-direction: column;
+    background-color: $card-bg;
+    border-radius: $card-radius;
+    box-shadow: 0 6px 15px $card-shadow;
+    overflow: hidden;
+    width: 220px;
+    height: 460px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px $hover-shadow;
+    }
+
+    .poster.movie-poster {
+        width: 100%;
+        height: 300px;
+        border-top-left-radius: $card-radius;
+        border-top-right-radius: $card-radius;
+        background-color: #f0f0f0;
+        transition: transform 0.3s;
+
+        &:hover {
+            transform: scale(1.03);
+        }
+    }
+
+    .info.movie-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem 0.8rem;
+        text-align: left;
+
+        .movie-title {
+            font-size: 1.2rem;
+            color: $text-color;
+            margin-bottom: 0.3rem;
+            line-height: 1.2rem;
+            word-wrap: break-word;
+        }
+
+        .movie-director,
+        .movie-description,
+        .movie-genre,
+        .movie-rating,
+        .movie-language,
+        .movie-duration,
+        .movie-release-date {
+            font-size: 0.85rem;
+            color: $text-color;
+            margin: 2px 0;
+            line-height: 1.2rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .movie-buttons {
+            margin-top: auto;
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+
+            .btn-delete {
+                cursor: pointer;
+                border: none;
+                border-radius: 6px;
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+                transition: transform 0.2s, background 0.3s;
+                background-color: $button-color;
+                color: white;
+
+                &:hover {
+                    transform: scale(1.05);
+                    background-color: $button-hover;
+                }
+            }
+
+            .btn-primary {
+                cursor: pointer;
+                border: none;
+                border-radius: 6px;
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+                transition: transform 0.2s, background 0.3s;
+                background-color: $primary-color;
+                color: white;
+
+                &:hover {
+                    transform: scale(1.05);
+                    background-color: $primary-hover;
+                }
+            }
+        }
+    }
+}
+
+/**details**/
+$heading-color: #2c3e50;
+$text-color: #555;
+$highlight-color: #f1c40f;
+$poster-bg: #f4f6f7;
+$button-radius: 10px;
+$box-shadow: rgba(0, 0, 0, 0.15);
+
+.movie-details {
+    .movie-title {
+        text-align: center;
+        font-size: 2rem;
+        color: $heading-color;
+        margin-bottom: 1rem;
+        font-weight: 600;
+    }
+
+    .movie-poster {
+        display: block;
+        margin: 0 auto 1rem auto;
+        width: 260px;
+        height: 380px;
+        object-fit: contain;
+        border-radius: 16px;
+        background: $poster-bg;
+        padding: 10px;
+        box-shadow: 0 8px 18px $box-shadow;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+
+    .movie-description,
+    .movie-director,
+    .movie-genre,
+    .movie-rating,
+    .movie-language,
+    .movie-duration,
+    .movie-release-date {
+        text-align: center;
+        font-size: 1rem;
+        color: $text-color;
+        margin: 6px 0;
+        line-height: 1.4;
+    }
+
+    .favorite-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+
+        .btn-favorite {
+            display: block;
+            padding: 0.6rem 1.4rem;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: #fff;
+            border: none;
+            border-radius: $button-radius;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 4px 10px $box-shadow;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: linear-gradient(135deg, #2980b9, #1f6391);
+                transform: scale(1.08);
+            }
+        }
+
+        .favorite-badge {
+            display: block;
+            text-align: center;
+            font-size: 1.2rem;
+            color: $highlight-color;
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+    }
+}
+
+.no-movie {
+    text-align: center;
+    font-size: 1rem;
+    color: $text-color;
+    margin-top: 1rem;
+}
+
+/***list**/
+.movies-heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-style: oblique;
+}
+
+.no-movies {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+    margin-top: 1rem;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+
+/**pagenotfound**/
+#title {
+    font-size: 4rem;
+    color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#subtitle {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/**hide delete button in recommended**/
+.app .movie-buttons .btn-delete {
+    display: none;
+}

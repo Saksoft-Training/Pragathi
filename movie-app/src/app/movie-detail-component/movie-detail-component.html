@@ -1,0 +1,36 @@
+<div class="movie-details">
+  <h3 class="movie-title">{{ current?.title || '' }} ({{ current?.year || '' }})</h3>
+  <img [src]="current?.posterUrl || ''" [alt]="current?.title || ''" class="poster movie-poster">
+  <div class="movie-fields">
+    <p class="movie-description">
+      {{ current?.description ? 'Description: ' + current?.description : '' }}
+    </p>
+    <p class="movie-director">
+      {{ current?.director ? 'Director: ' + current?.director : '' }}
+    </p>
+    <p class="movie-genre">
+      {{ current?.genre ? 'Genre: ' + current?.genre : '' }}
+    </p>
+    <p class="movie-rating">
+      {{ current?.rating ? 'Rating: ' + current?.rating + '/10' : '' }}
+    </p>
+    <p class="movie-language">
+      {{ current?.language ? 'Language: ' + current?.language : '' }}
+    </p>
+    <p class="movie-duration">
+      {{ current?.duration ? 'Duration: ' + current?.duration + ' min' : '' }}
+    </p>
+    <p class="movie-release-date">
+      {{ current?.releaseDate ? 'Release: ' + current?.releaseDate : '' }}
+    </p>
+  </div>
+  <div class="favorite-container">
+    <button class="btn-favorite" (click)="toggleFavorite()">Mark as Favorite</button>
+    <span class="favorite-badge">
+      {{ current?.favorite ? 'Favorite' : '' }}
+    </span>
+  </div>
+</div>
+<p class="no-movie">
+  {{ !current ? 'No movie selected' : '' }}
+</p>
